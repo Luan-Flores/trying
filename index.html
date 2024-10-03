@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagem/cookie.png" type="image/x-icon">
     <title>Ice Cream</title>
 </head>
 <body>
     <header>
         <nav class="nav-header">
-        <div class="box-logo">
-            <a href="#">
-            <img src="imagem/chipsahoylogo.png" alt="">
-        </div>
-            </a>
+        <a class="box-logo" href="@">
+            <img src="imagem/ahoy.png" alt="">
+        </a>
             <div class="box-btn-hamburger">
             <button id="btn-burger">
-                <div></div>
-                <div></div>
-                <div></div>
+                <div class="bar-btn"></div>
+                <div class="bar-btn"></div>
+                <div class="bar-btn"></div>
             </button>
             </div>
             <ul class="itens-header">
@@ -31,14 +30,24 @@
                 <a href="#">
                     <li class="li-itens">Contato</li>
                 </a><a href="#">
-                    <li class="li-itens">Sobre</li>
+                    <li class="li-itens">URSS</li>
                 </a>
             </ul>
         </nav>
     </header>
+    <section class="first-pai">
+
+    </section>
 </body>
 <script>
     var btnBurger = document.getElementById('btn-burger')
+    var navHeader = document.querySelector('.itens-header')
+
+    btnBurger.addEventListener('click', function(evento){
+        evento.preventDefault();
+        navHeader.classList.toggle('ativo');
+        btnBurger.classList.toggle('ativo');
+    })
 
 
 </script>

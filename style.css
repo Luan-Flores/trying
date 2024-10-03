@@ -1,57 +1,138 @@
 *{
-    padding: 0;
     list-style: none;
     font-style: default;
     text-decoration: none;
     color: white;
+    margin: 0;
+    padding: 0;
 }
 header{
     background-color: rgb(6, 63, 116);
     justify-content: space-around;
+    position: relative;
     padding: 0 200px;
-    height: 100px;
-    max-height: 100px;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 90px;
+    background-image: url(imagem/frameHeaderrs.png);
 }
 .box-logo{
+    width: 140px;
+    height: auto;
+    align-items: center;
+}
+
+.box-logo img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-.box-logo img{
-    width: 100px;
-    height: auto;
-    padding-top: 8px;
+    object-position: center;
 }
 .nav-header{
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 600px;
 }
 .itens-header{
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 40px;
     font-family: Arial, Helvetica, sans-serif;
-    height: 10px;
+}
+.itens-header li{
+    border-bottom: 2px solid transparent; /* Borda invisível inicialmente */
 }
 .itens-header li:hover{
     border-bottom: 2px solid red;
 }
-
-#btn-burger{
-    display: none;
+.itens-header.ativo li:hover{
+    border-bottom: 2px solid rgb(6, 63, 116);
 }
+
+.box-btn-hamburger{
+    display: none;
+    color: transparent;
+}
+#btn-burger{
+    color: transparent;
+    background: transparent;
+    border: none;
+}
+.bar-btn{
+    display: block;
+    width: 30px;
+    height: 5px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(253, 253, 253);
+    border-radius: 4px;
+}
+
 @media (max-width: 525px){
-    header{
+    header {
+        height: auto;
+        width: auto;
+        display: flex;
+        gap: 80px;
+        justify-content: flex-end; /* Adiciona espaçamento entre logo e o menu */
+        background-image: url(imagem/frame.png);
+    }
+    .box-logo {
+        order: -1; /* Traz a logo para a esquerda */
+    }
+    .box-logo img {
+        width: 100px;
+        height: auto;
+        padding: 0; /* Remove qualquer padding extra */
+    }
+    .nav-header {
+        gap: 100px;
         display: flex;
         justify-content: space-between;
+        margin-left: 140px;
+    }
+    .box-btn-hamburger{
+        display: block;
+        
     }
     .itens-header{
         display: none;
-        justify-content:flex-start;
+        flex-direction: column;
+        position: absolute;
+        background-color: #f10000;
+        gap: 20px;
     }
-    #btn-burger{
-        display: block;
+    .itens-header.ativo{
+        display: flex;
+        width: 100vw;
+        left: 0;
+        top: 100%;
+        transition: 0.3s;
+        align-items: center;
+        height: 160px;
+    }
+   
+    .itens-header.ativo li{
+        margin-top: 4px;
+    }
+    .itens-header.ativo .box-logo img{
+        width: 100%;
+        height: auto;
+    }
+    .itens-header .box-logo{
+        width: 2px;
+        height: 2px;
+        object-fit: cover;
+    }
+    #btn-burger.ativo .bar-btn:nth-child(2){
+        opacity: 0;
+    }
+    #btn-burger.ativo .bar-btn:nth-child(1){
+        transform: translateY(12px) rotate(45deg);
+    }
+    #btn-burger.ativo .bar-btn:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
