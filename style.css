@@ -38,7 +38,7 @@ header{
     display: flex;
     flex-direction: row;
     gap: 40px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 .itens-header li{
     border-bottom: 2px solid transparent; /* Borda invisível inicialmente */
@@ -69,6 +69,19 @@ header{
     background-color: rgb(253, 253, 253);
     border-radius: 4px;
 }
+.first-pai{
+    background-color: rgba(120, 175, 223, 0.13);
+}
+.first-pai .first-img{
+    width: 300px;
+    height: auto;
+}
+.first-img #img-sorv{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
 
 @media (max-width: 525px){
     header {
@@ -95,7 +108,6 @@ header{
     }
     .box-btn-hamburger{
         display: block;
-        
     }
     .itens-header{
         display: none;
